@@ -29,7 +29,7 @@ function mumbleReader(jsonurl, div) {
   //General options
   var ltooltip = false;
   var limgpath = "http://fwaggle.github.com/mumble-cvp.js/";
-  var llenght = 20;
+  var llength = 20;
   
   /**************************************************************
    * Mumble Reader functions
@@ -42,8 +42,8 @@ function mumbleReader(jsonurl, div) {
     limgpath = val;
   }
 
-  this.setlenght = function (val) {
-    llenght = val;
+  this.setlength = function (val) {
+    llength = val;
   }
 
   /**
@@ -68,7 +68,7 @@ function mumbleReader(jsonurl, div) {
    */
   var channel = function(data) {
     var tip = "Name: "+data.name;
-    var d = "<div class=\"mumbleChannel\"><a href=\""+"\" tooltip=\""+tip+"\">" + img('channel.png', '') + lengh(data.name)+ "</a>";
+    var d = "<div class=\"mumbleChannel\"><a href=\""+"\" tooltip=\""+tip+"\">" + img('channel.png', '') + data.name.substring(0, llength);+ "</a>";
     if(data.channels != null) {
       d += channels(data.channels);
     }
@@ -103,7 +103,7 @@ function mumbleReader(jsonurl, div) {
   var user = function(data) {
     var tip = "Name: "+data.name+"<br />Idle:" + parseTime(data.idlesecs) + "<br />Online:" + parseTime(data.onlinesecs) + "<br />OS:" +data.os;
     var imgf = (data.idlesecs == 0) ? img('talking_on.png', '') : img('talking_off.png', '');
-    var d = "<div class=\"mumbleUser\"><a tooltip=\""+ tip +"\">" +imgf+ lengh(data.name);
+    var d = "<div class=\"mumbleUser\"><a tooltip=\""+ tip +"\">" +imgf+ data.name.substring(0, llength);
     d += "<div class=\"mumbleFlags\">";
     d += userflags(data);
     d += "</div></a>";
@@ -168,21 +168,6 @@ function mumbleReader(jsonurl, div) {
   }
   
   /**
-   * Change the strings to a length given maybe do some formating
-   *
-   * @oaran str the stinrg to check
-   * @parma length the length sting may not be longer as
-   * @return a well formated not to long string
-   */
-  var lengh = function (str) {
-    if(str.length < llenght) {
-      return str;
-    } else {
-      return str.substring(0, llenght);
-    }
-  }
-  
-  /**
    * Render a image for use in the viewer
    *
    * @param file the file name of the image
@@ -203,7 +188,7 @@ function mumbleReader(jsonurl, div) {
     var tip = "IP:"+"<br />Uptime:";
     var d = "<div class=\"mumstatus\">";
     var src = (data.x_connecturl != null) ? data.x_connecturl : '';
-    d += "<a href=\""+src+"\" tooltip=\""+ tip +"\">"+img('mumble.png', '')+" " + lengh(data.name) +": </a><br />";
+    d += "<a href=\""+src+"\" tooltip=\""+ tip +"\">"+img('mumble.png', '')+" " + data.name.substring(0, llength); +": </a><br />";
     if(data.root.channels != null) {
       d += channels(data.root.channels);
     }
