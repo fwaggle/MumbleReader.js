@@ -68,7 +68,7 @@ function mumbleReader(jsonurl, div) {
    */
   var channel = function(data) {
     var tip = "Name: "+data.name;
-    var d = "<div class=\"mumstatusItem\"><div class=\"mumstatusLabel\"><a href=\""+"\" tooltip=\""+tip+"\">" + img('channel.png', '') + lengh(data.name)+ "</a></div>";
+    var d = "<div class=\"mumbleChannel\"><a href=\""+"\" tooltip=\""+tip+"\">" + img('channel.png', '') + lengh(data.name)+ "</a>";
     if(data.channels != null) {
       d += channels(data.channels);
     }
@@ -103,8 +103,8 @@ function mumbleReader(jsonurl, div) {
   var user = function(data) {
     var tip = "Name: "+data.name+"<br />Idle:" + parseTime(data.idlesecs) + "<br />Online:" + parseTime(data.onlinesecs) + "<br />OS:" +data.os;
     var imgf = (data.idlesecs == 0) ? img('talking_on.png', '') : img('talking_off.png', '');
-    var d = "<div class=\"mumstatusItem\"><div class=\"mumstatusLabel\"><a tooltip=\""+ tip +"\">" +imgf+ lengh(data.name) + "</div>";
-    d += "<div class=\"mumstatusFlags\">";
+    var d = "<div class=\"mumbleUser\"><a tooltip=\""+ tip +"\">" +imgf+ lengh(data.name);
+    d += "<div class=\"mumbleFlags\">";
     d += userflags(data);
     d += "</div></a>";
     if(data.channels != null) {

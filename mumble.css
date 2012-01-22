@@ -16,3 +16,22 @@
 ** along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+.mumbleChannel {
+	margin-left: 1em;
+}
+
+.mumbleUser {
+	margin-left: 1em;
+}
+
+.mumbleFlags {
+	float: right;
+}
+
+.mumbleReader img {
+	padding-right: 3px;
+}
+
+.mumbleReader a {
+	text-decoration: none;
+}
