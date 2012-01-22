@@ -1,6 +1,6 @@
 /*
 ** Copyright 2011 Jamie Fraser <jamie.f@mumbledog.com>
-** Copyright 2010 Pimmetje
+** Copyright 2010 Pimmetje <Pimmetje@gmail.com>
 **
 ** This program is free software: you can redistribute it and/or modify
 ** it under the terms of the GNU Lesser General Public License as published by
