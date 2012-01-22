@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Mumble Server Status</title>
+		<link rel="stylesheet" type="text/css" href="mumble.css" />
+	</head>
+	<body>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script type="text/javascript" src="mumble.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				load_mum(); //This will to the loading the first time
+				window.setInterval("load_mum();", 30000); //This will load the viewer every 30 seconds
+			});
+
+			var mr = new mumbleReader('http://tx.mumbledog.com/mumble.php?port=64738&callback=?', 'mum0'); //init the object
+			mr.setlenght(16);
+
+			function load_mum() {
+				mr.start(); //This will reload the viewer
+			}
+		</script>
+		
+		<!-- This layer is where the resulting tree object is returned.
+			 See callback argument in JS, above. -->
+		<div id="mum0"></div>
+	</body>
+</html>
