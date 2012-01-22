@@ -28,6 +28,10 @@
 	float: right;
 }
 
+.mumbleReader {
+	/* width: 250px; */
+}
+
 .mumbleReader img {
 	padding-right: 3px;
 }
