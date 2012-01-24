@@ -68,7 +68,7 @@ function mumbleReader(jsonurl, div) {
    */
   var channel = function(data) {
     var tip = "Name: "+data.name;
-    var d = "<div class=\"mumbleChannel\"><a href=\""+"\" tooltip=\""+tip+"\">" + img('channel.png', '') + data.name.substring(0, llength);+ "</a>";
+    var d = "<div class=\"mumbleChannel\"><a tooltip=\""+tip+"\">" + img('channel.png', '') + data.name.substring(0, llength);+ "</a>";
     if(data.channels != null) {
       d += channels(data.channels);
     }
