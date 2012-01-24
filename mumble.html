@@ -5,8 +5,11 @@
 		<link rel="stylesheet" type="text/css" href="mumble.css" />
 	</head>
 	<body>
+		<!-- Load jQuery - if you are already loading jQuery for another reason you can omit this. -->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<!-- Load MumbleViewer script -->
 		<script type="text/javascript" src="mumble.js"></script>
+		<!-- Start Mumble Viewer -->
 		<script type="text/javascript">
 			$(document).ready(function() {
 				load_mum(); //This will to the loading the first time
@@ -14,8 +17,8 @@
 			});
 
 			var mr = new mumbleReader('http://tx.mumbledog.com/mumble.php?port=64738&callback=?', 'mum0'); //init the object
-			mr.setlength(16);
-			mr.setimgpath('http://fwaggle.github.com/mumble-cvp.js/');
+			mr.setlength(16); // Set the number of characters to truncat at (example of 16 for sidebars)
+			mr.setimgpath('http://fwaggle.github.com/mumble-cvp.js/'); // Set location of images for icons
 
 			function load_mum() {
 				mr.start(); //This will reload the viewer
