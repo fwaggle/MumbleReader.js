@@ -78,7 +78,7 @@ function mumbleReader(jsonurl, div) {
    * @return valid html of the image for viewer
    */
   var img = function (file, alt) {
-    return "<img src='" + limgpath + file + "' alt='" + alt + "' />";
+    return "<img src=\"" + limgpath + file + "\" alt=\"" + alt + "\" />";
   };
 
   /**
