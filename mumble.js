@@ -188,10 +188,10 @@ function mumbleReader(jsonurl, div) {
    * @return the renderd data
    */
   var root = function (data) {
-    var tip = "IP:" + "<br />Uptime:";
+    var tip = "Uptime: " + parseTime(data.x_uptime);
     var d = "<div class=\"mumstatus\">";
     var src = (data.x_connecturl != null) ? data.x_connecturl : '';
-    d += "<a href=\"" + src + "\" tooltip=\"" + tip + "\">" + img('mumble.png', '') + " " + data.name.substring(0, llength) + ": </a><br />";
+    d += "<a href=\"" + src + "\" tooltip=\"" + tip + "\" title=\"" + tip + "\">" + img('mumble.png', '') + " " + data.name.substring(0, llength) + ": </a><br />";
     if (data.root.channels != null) {
       d += channels(data.root.channels);
     }
