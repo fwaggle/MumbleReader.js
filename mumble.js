@@ -135,9 +135,13 @@ function mumbleReader(jsonurl, div) {
    * @reten the user renderd
    */
   var user = function (data) {
-    var tip = "Name: " + data.name + "<br />Idle:" + parseTime(data.idlesecs) + "<br />Online:" + parseTime(data.onlinesecs) + "<br />OS:" + data.os;
+    var tip = "Name: " + data.name + "<br />Idle: " + parseTime(data.idlesecs) + "<br />Online: " + parseTime(data.onlinesecs) + "<br />OS: " + data.os;
+	var tipplain = '';
+	if (!ltooltip) {
+		tipplain = "Name: " + data.name + "\nIdle: " + parseTime(data.idlesecs) + "\nOnline: " + parseTime(data.onlinesecs) + "\nOS: " + data.os;
+	}
     var imgf = (data.idlesecs == 0) ? img('talking_on.png', '') : img('talking_off.png', '');
-    var d = "<div class=\"mumbleUser\"><a tooltip=\"" + tip + "\">" + imgf + data.name.substring(0, llength);
+    var d = "<div class=\"mumbleUser\"><a tooltip=\"" + tip + "\" title=\"" + tipplain + "\">" + imgf + data.name.substring(0, llength);
     d += "<div class=\"mumbleFlags\">";
     d += userflags(data);
     d += "</div></a>";
