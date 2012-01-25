@@ -160,12 +160,12 @@ function mumbleReader(jsonurl, div) {
    */
   var userflags = function (data) {
     var imgf = "";
-    imgf += (data.mute) ? img('muted_server.png', '') : "";
-    imgf += (data.deaf) ? img('deafened_server.png', '') : "";
-    imgf += (data.suppressed) ? img('muted_local.png', '') : "";
-    imgf += (data.selfMute) ? img('muted_self.png', '') : "";
-    imgf += (data.selfDeaf) ? img('deafened_self.png', '') : "";
-    imgf += (data.id != -1) ? img('authenticated.png', '') : "";
+    imgf += (data.mute) ? img('muted_server.png', 'Muted') : "";
+    imgf += (data.deaf) ? img('deafened_server.png', 'Deafened') : "";
+    imgf += (data.suppressed) ? img('muted_local.png', 'Suppressed') : "";
+    imgf += (data.selfMute) ? img('muted_self.png', 'Self-muted') : "";
+    imgf += (data.selfDeaf) ? img('deafened_self.png', 'Self-deafened') : "";
+    imgf += (data.id != -1) ? img('authenticated.png', 'Authenticated') : "";
     return imgf;
   };
 
