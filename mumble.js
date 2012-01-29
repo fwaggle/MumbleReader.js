@@ -28,7 +28,7 @@ function mumbleReader(jsonurl, div) {
   var ljsonurl = jsonurl;
   //General options
   var ltooltip = false;
-  var limgpath = "http://fwaggle.github.com/mumble-cvp.js/";
+  var limgpath = "http://fwaggle.github.com/MumbleReader.js/";
   var llength = 20;
 
   /**************************************************************
@@ -227,7 +227,7 @@ function mumbleReader(jsonurl, div) {
    */
   this.start = function () {
     $.getJSON(jsonurl,
-	  function (data){
+	  function (data) {
         render(data);
       }
 	);
